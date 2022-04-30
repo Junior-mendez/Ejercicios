@@ -31,7 +31,7 @@
 # # las distintas frutas. El programa pedirá el nombre de la fruta y la cantidad que se ha vendido y nos 
 # # mostrará el precio final de la fruta a partir de los datos guardados en el diccionario. Si la fruta no existe 
 # # nos dará un error. Tras cada consulta el programa nos preguntará si queremos hacer otra consulta.
-# # frutas={"manzana":3,"mango":1,"platano":2}
+# frutas={"manzana":3,"mango":1,"platano":2}
 # def calcular_monto(nombre,cantidad):
 #     resultado=0
 #     for key,valor in frutas.items():
@@ -95,53 +95,53 @@
 # # Borrar: Nos pide un nombre y si existe nos preguntará si queremos borrarlo de la agenda.
 # # Listar: Nos muestra todos los contactos de la agenda.
 # # Implementar el programa con un diccionario
-# agenda={}
-# def anadir_modificar(nombre):
-#     if nombre in agenda:
-#         numero=int(input("Ingrese el numero nuevo del contacto: "))
-#         for key in agenda:
-#             if nombre==key:
-#                 agenda[key]=numero
-#             print("Contacto modificado:",nombre,"-> Número:",numero)
-#     else:
-#         numero=int(input("Ingrese el numero del contacto: "))
-#         agenda[nombre]=numero
-#     print("Contacto agregado:",nombre,"-> Número:",numero)
-# def buscar(cadena):
-#     for key,value in agenda.items():
-#         if cadena in key:
-#             print(key,":",value)
-# def borrar(nombre):
-#     if nombre in agenda:
-#         confirmacion=input("Está seguro que desea eliminar el contacto escriba 'S' para confirmar: ")
-#         if confirmacion=='S' or confirmacion=='s':
-#             del agenda[nombre]            
-# def menu():
-#     while True:
-#         print("########### AGENDA ##############")
-#         print("1. Añadir/Modificar contacto")
-#         print("2. Buscar contacto")
-#         print("3. Borrar contacto")
-#         print("4. Listar contacto")
-#         print("5. Salir")
-#         opcion=int(input("Ingrese la opción:"))
-#         if opcion==1:            
-#             nombre=input("\nIngrese el nombre a añadir o modificar: ")
-#             anadir_modificar(nombre)
-#         elif opcion==2:
-#             print("########### BÚSQUEDA DE CONTACTO ############")
-#             nombre=input("\nIngrese el nombre a buscar: ")
-#             buscar(nombre)
-#         elif opcion==3:
-#             print("########### ELIMINAR CONTACTO ############")
-#             nombre=input("\nIngrese el nombre a borrar: ")
-#             borrar(nombre)
-#         elif opcion==4:
-#             print("########### LISTADO DE CONTACTOS ############")
-#             print(agenda)
-#         if opcion==5:
-#             break
-# menu()
+agenda={}
+def anadir_modificar(nombre):
+    if nombre in agenda:
+        numero=int(input("Ingrese el numero nuevo del contacto: "))
+        for key in agenda:
+            if nombre==key:
+                agenda[key]=numero
+            print("Contacto modificado:",nombre,"-> Número:",numero)
+    else:
+        numero=int(input("Ingrese el numero del contacto: "))
+        agenda[nombre]=numero
+    print("Contacto agregado:",nombre,"-> Número:",numero)
+def buscar(cadena):
+    for key,value in agenda.items():
+        if cadena in key:
+            print(key,":",value)
+def borrar(nombre):
+    if nombre in agenda:
+        confirmacion=input("Está seguro que desea eliminar el contacto escriba 'S' para confirmar: ")
+        if confirmacion=='S' or confirmacion=='s':
+            del agenda[nombre]            
+def menu():
+    while True:
+        print("########### AGENDA ##############")
+        print("1. Añadir/Modificar contacto")
+        print("2. Buscar contacto")
+        print("3. Borrar contacto")
+        print("4. Listar contacto")
+        print("5. Salir")
+        opcion=int(input("Ingrese la opción:"))
+        if opcion==1:            
+            nombre=input("\nIngrese el nombre a añadir o modificar: ")
+            anadir_modificar(nombre)
+        elif opcion==2:
+            print("########### BÚSQUEDA DE CONTACTO ############")
+            nombre=input("\nIngrese el nombre a buscar: ")
+            buscar(nombre)
+        elif opcion==3:
+            print("########### ELIMINAR CONTACTO ############")
+            nombre=input("\nIngrese el nombre a borrar: ")
+            borrar(nombre)
+        elif opcion==4:
+            print("########### LISTADO DE CONTACTOS ############")
+            print(agenda)
+        if opcion==5:
+            break
+menu()
 
 
 
